@@ -1,18 +1,20 @@
 function calculateSalary(fixo,vendas){
     let comissao = 0
     let salario = 0
-    if(vendas <= 1200){
+    if (vendas<=1200){
         comissao = vendas*(3/100)
     }
     if (vendas>1200){
-        comissao = vendas*(5/100)
+        comissao = 1200*(3/100)
+        vendas = vendas - 1200
+        comissao = comissao + vendas*(5/100)
     }
     salario = fixo + comissao
     return salario
 }
 
 console.log('calculateSalary():')
-console.log(calculateSalary(1200,1500))
+console.log(calculateSalary(1200,2000))
 
 function divisaoInteiro(valor,divisor){
     let operacao = valor/divisor
